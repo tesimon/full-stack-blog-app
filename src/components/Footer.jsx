@@ -6,7 +6,6 @@ const Footer = () => {
       <div className="w-[90vw] max-w-[1500px] h-[1px] bg-orange-300 my-2" />
       <div className="flex flex-col max-[640px]:gap-2 sm:flex-row justify-around  borderbackdrop:blur-md py-10 max-[768px]:ml-4 ">
         <div className="flex flex-col gap-4 ">
-          <h2 className="font-bold">T E's Tech</h2>
           <span className="text-orange-300 inline-flex gap-2">
             Icons credit <p className="text-slate-500">Icons by icons8</p>{" "}
           </span>
