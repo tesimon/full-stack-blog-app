@@ -2,7 +2,7 @@ import CardList from "@/components/CardList";
 import Loader from "@/components/Loader";
 import { Suspense } from "react";
 
-const page = ({ searchParams }) => {
+const Page = ({ searchParams }) => {
   const { cat, page } = searchParams;
   const catagory = cat;
   const pages = parseInt(page) || 1;
@@ -22,4 +22,4 @@ const page = ({ searchParams }) => {
     </Suspense>
   );
 };
-export default page;
+export default Page;

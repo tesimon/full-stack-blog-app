@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const page = () => {
+const Page = () => {
   // const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
   const [file, setfile] = useState(null);
   const [media, setMedia] = useState("");
@@ -147,4 +147,4 @@ const page = () => {
     </div>
   );
 };
-export default page;
+export default Page;
