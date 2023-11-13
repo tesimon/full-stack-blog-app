@@ -9,7 +9,7 @@ export const GET = async (req) => {
     const [post, count] = await prisma.$transaction([
       prisma.post.findMany({
         take: 4,
-        skip: 3 * (pageNumb - 1),
+        skip: 3 * (pageNumb || 1 - 1),
         where: { ...(cat && { catSlug: cat }) },
         include: { user: true },
       }),
@@ -18,10 +18,9 @@ export const GET = async (req) => {
 
     return new Response(JSON.stringify({ post, count }, { status: 200 }));
   } catch (err) {
-    console.log(err);
     return new Response(
       JSON.stringify(
-        { messege: "failed to fetch posts from prisma" },
+        { messege: "failed to fetch filtered posts from db" },
         { status: 500 }
       )
     );
@@ -43,7 +42,6 @@ export const POST = async (req) => {
     });
     return new Response(JSON.stringify(posts, { status: 200 }));
   } catch (error) {
-    console.log(error);
     return new Response(
       JSON.stringify(
         { messege: "failed to post the blog to the db" },
